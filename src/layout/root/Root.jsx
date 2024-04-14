@@ -5,8 +5,10 @@ import Navbar from "../../pages/shared/navbar/Navbar";
 const Root = () => {
     return (
         <div>
-            <Navbar/>
+           <Navbar/>
+           <div className="max-w-[1300px] mx-auto">
             <Outlet/>
+           </div>
         </div>
     );
 };
