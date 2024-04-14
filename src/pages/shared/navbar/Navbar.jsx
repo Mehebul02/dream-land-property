@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/logo-3.png'
 const Navbar = () => {
   const navLink = <>
@@ -6,7 +6,7 @@ const Navbar = () => {
   
   <NavLink to='about' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">About Us</li></NavLink>
   
-  <NavLink to='/gallery' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Gallery</li></NavLink>
+  <NavLink to='/gallery' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Update Profile</li></NavLink>
   
   <NavLink to='/contact' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Contact US</li></NavLink>
   
@@ -59,7 +59,7 @@ const Navbar = () => {
             <li><a>Logout</a></li>
           </ul>
         </div> */}
-        <button className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Login</button>
+        <Link to='/login'><button className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Login</button></Link>
       </div>
       </div>
     
