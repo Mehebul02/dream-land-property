@@ -13,7 +13,7 @@ const Navbar = () => {
   
   </>
     return (
-      <div className="navbar bg-[#0284C7] md:px-14 ">
+      <div className="navbar bg-[#0284C7] md:px-14  ">
      
       <div className="flex-1">
        <img className=" md:max-w-36" src={logo} alt="" />
