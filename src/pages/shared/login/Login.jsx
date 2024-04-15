@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { useForm } from "react-hook-form";
 import SocialPage from "../../socialpage/SocialPage";
@@ -11,7 +11,9 @@ import { RingLoader } from "react-spinners";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { loginUser,gitHubLogin,loading } = useContext(AuthContext);
-  
+  const navigate =useNavigate()
+  const location = useLocation()
+  const from =location?.state || '/'
   const {
     register,
     handleSubmit,
@@ -22,6 +24,7 @@ const Login = () => {
     const { email, password } = data;
     loginUser(email, password)
       .then((result) => {
+        navigate(from)
         console.log(result.user);
       })
       .catch((error) => {
@@ -34,6 +37,7 @@ const Login = () => {
   const handleGitHubLogin =()=>{
     gitHubLogin()
     .then(result =>{
+      navigate(from)
       console.log(result.user)
     })
     .catch(error =>{

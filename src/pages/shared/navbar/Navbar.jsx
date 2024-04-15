@@ -18,7 +18,7 @@ const Navbar = () => {
   
   <NavLink to='about' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">About Us</li></NavLink>
   
-  <NavLink to='/gallery' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Update Profile</li></NavLink>
+  <NavLink to='/update' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Update Profile</li></NavLink>
   
   <NavLink to='/contact' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Contact US</li></NavLink>
   
@@ -81,7 +81,7 @@ const Navbar = () => {
         </div> */}
         {user ? <> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img alt="Tailwind CSS Navbar component" src={user?.photoURL ||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
             </div>
           </div>
           <button onClick={handleLogOut} className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Log Out</button>

@@ -14,13 +14,11 @@ const PrivateRoutes = ({children}) => {
       /> </div>
       }
     if(user){
-        return <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
+       return children
     }
-    return (
-        <div>
-            {children}
-        </div>
-    );
+    return  <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
+       
+    
 };
 
 export default PrivateRoutes;
