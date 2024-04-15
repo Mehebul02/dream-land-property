@@ -1,6 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/logo-3.png'
+import { useContext } from "react";
+import { AuthContext } from "../../../provider/AuthProvider";
 const Navbar = () => {
+  const{user,logOut} = useContext(AuthContext)
+  const handleLogOut =()=>{
+    logOut()
+    .then(console.log('Log Out Successfully'))
+    .catch(error =>{
+      console.log(error)
+    })
+  }
   const navLink = <>
   <NavLink to='/' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Home</li></NavLink>
   
@@ -59,7 +69,13 @@ const Navbar = () => {
             <li><a>Logout</a></li>
           </ul>
         </div> */}
-        <Link to='/login'><button className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Login</button></Link>
+        {user ? <> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
+          </div>
+          <button onClick={handleLogOut} className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Log Out</button>
+        </>:<Link to='/login'><button className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Login</button></Link>}
       </div>
       </div>
     
