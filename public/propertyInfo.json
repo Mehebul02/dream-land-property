@@ -1,0 +1,75 @@
+[
+    {
+      "image": "https://example.com/image1.jpg",
+      "estate_title": "Modern Apartment in Downtown",
+      "id": "001",
+      "segment_name": "Premium",
+      "description": "A sleek and modern apartment located in the heart of the city, offering luxurious living with stunning city views.",
+      "price": "$900,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Downtown San Francisco, California",
+      "facilities": ["Gym", "Swimming Pool", "Concierge Service"]
+    },
+    {
+      "image": "https://example.com/image2.jpg",
+      "estate_title": "Cozy Suburban House",
+      "id": "002",
+      "segment_name": "Standard",
+      "description": "A charming suburban house perfect for families, featuring a spacious backyard and comfortable living spaces.",
+      "price": "$550,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Suburban Atlanta, Georgia",
+      "facilities": ["Backyard", "Fireplace", "Garage"]
+    },
+    {
+      "image": "https://example.com/image3.jpg",
+      "estate_title": "Luxury Beachfront Villa",
+      "id": "003",
+      "segment_name": "Premium",
+      "description": "An exquisite beachfront villa offering unparalleled luxury and breathtaking ocean views, perfect for a serene escape.",
+      "price": "$2,500,000",
+      "status": "sale",
+      "area": "5000 sq ft",
+      "location": "Maui, Hawaii",
+      "facilities": ["Private Beach Access", "Infinity Pool", "Gourmet Kitchen"]
+    },
+    {
+      "image": "https://example.com/image4.jpg",
+      "estate_title": "City Loft with Industrial Charm",
+      "id": "004",
+      "segment_name": "Standard",
+      "description": "A trendy city loft with exposed brick walls and industrial charm, located in a vibrant neighborhood.",
+      "price": "$750,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Brooklyn, New York",
+      "facilities": ["Open Floor Plan", "Loft Bedroom", "Roof Deck"]
+    },
+    {
+      "image": "https://example.com/image5.jpg",
+      "estate_title": "Spacious Family Home with Pool",
+      "id": "005",
+      "segment_name": "Standard",
+      "description": "A spacious family home with a private pool, perfect for entertaining and relaxing, nestled in a quiet neighborhood.",
+      "price": "$650,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Suburban Austin, Texas",
+      "facilities": ["Swimming Pool", "Game Room", "Outdoor Kitchen"]
+    },
+    {
+      "image": "https://example.com/image6.jpg",
+      "estate_title": "Elegant Townhouse in Historic District",
+      "id": "006",
+      "segment_name": "Premium",
+      "description": "An elegant townhouse located in a historic district, featuring classic architecture and modern amenities.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Old Town Alexandria, Virginia",
+      "facilities": ["Private Patio", "Library", "Wine Cellar"]
+    }
+  ]
+  
