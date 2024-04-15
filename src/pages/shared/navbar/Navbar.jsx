@@ -2,8 +2,9 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/logo-3.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import {  ScaleLoader } from "react-spinners";
 const Navbar = () => {
-  const{user,logOut} = useContext(AuthContext)
+  const{user,logOut,loading} = useContext(AuthContext)
   const handleLogOut =()=>{
     logOut()
     .then(console.log('Log Out Successfully'))
@@ -11,6 +12,7 @@ const Navbar = () => {
       console.log(error)
     })
   }
+ 
   const navLink = <>
   <NavLink to='/' className={({ isActive }) => isActive ?  "border-b-2 border-red-600" : ""}><li className="text-xl font-poppins text-white ">Home</li></NavLink>
   
@@ -22,6 +24,14 @@ const Navbar = () => {
   
   
   </>
+   if(loading){
+    return <div className="flex justify-center items-center h-screen"><ScaleLoader
+    color="#36a5d6"
+    height={100}
+    radius={9}
+    width={20}
+  /></div>
+  }
     return (
       <div className="navbar bg-[#0284C7] md:px-14  ">
      

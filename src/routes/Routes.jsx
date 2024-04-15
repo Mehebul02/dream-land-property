@@ -7,6 +7,7 @@ import Home from "../pages/home/Home";
 import Login from "../pages/shared/login/Login";
 import Register from "../pages/shared/register/Register";
 import ErrorPage from "../pages/error/ErrorPage";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
   const router = createBrowserRouter([
     {

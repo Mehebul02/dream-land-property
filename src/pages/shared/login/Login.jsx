@@ -6,10 +6,12 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { RingLoader } from "react-spinners";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser,gitHubLogin } = useContext(AuthContext);
+  const { loginUser,gitHubLogin,loading } = useContext(AuthContext);
+  
   const {
     register,
     handleSubmit,
@@ -38,6 +40,7 @@ const Login = () => {
       console.log(error)
     })
   }
+  
   return (
     <div>
       <div className="p-4 bg-gray-300 max-w-4xl mx-auto rounded-md shadow-lg">

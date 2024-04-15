@@ -8,7 +8,7 @@ import toast, { Toaster } from "react-hot-toast";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState();
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateProfile } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -16,8 +16,8 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, e) => {
-    const { email, password } = data;
+  const onSubmit = (data,) => {
+    const { email, password,name,image } = data;
     if (password.length < 6) {
       return toast.error("Password should be at least 6 characters!");
     }
@@ -26,12 +26,18 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        updateProfile(name,image)
+        .then(()=>{
+
+        })
+        .catch(error =>console.log(error))
         console.log(result.user);
         toast.success("Your Registration Is Successful");
+        
       })
       .catch((error) => {
         console.log(error);
-        toast.error("Email-already-in-use!");
+        // toast.error("Email-already-in-use!");
       });
 
     console.log("show data", data);
@@ -73,13 +79,13 @@ const Register = () => {
             </label>
             <input
               type="text"
-              name="photoUrl"
+              name="image" 
               placeholder="Photo"
               className="input input-bordered"
               required
-              {...register("photo", { required: true })}
+              {...register("image", { required: true })}
             />
-            {errors.photo && (
+            {errors.image && (
               <span className="text-red-700">This field is required</span>
             )}
           </div>

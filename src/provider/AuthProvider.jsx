@@ -14,12 +14,22 @@ const gitHubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading,setLoading] = useState(true)
   // create user
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
+  // update profille 
+  const updateProfile =(name,image)=>{
+  return updateProfile(auth.currentUser, {
+      displayName: name,
+       photoURL: image
+    })
+  }
   // sign in user
   const loginUser = (email, password) => {
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password);
   };
 //   log Out 
@@ -32,6 +42,7 @@ const logOut =()=>{
   };
   useEffect(() => {
     const unSubScribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(false)
       setUser(currentUser);
       console.log("Tui Sob Somoy Thakbi",currentUser);
     });
@@ -44,7 +55,9 @@ const logOut =()=>{
     createUser,
     loginUser,
     gitHubLogin,
-    logOut
+    logOut,
+    loading,
+    updateProfile,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
