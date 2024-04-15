@@ -9,7 +9,7 @@ const ErrorPage = () => {
       <p>
         <i className="text-2xl">{error.statusText || error.message}</i>
       </p>
-        <Link to='/'><button className="btn mt-5 bg-[#0284C7]">Home</button></Link>
+        <Link to='/'><button className="btn mt-5 bg-[#0284C7]">Back To Home</button></Link>
           </div>
         </div>
     );

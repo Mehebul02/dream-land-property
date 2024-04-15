@@ -13,7 +13,7 @@ const SocialPage = () => {
           
                 <div className='divider'>Continue With</div>
                 <div>
-                    <button  className='btn btn-primary btn-circle btn-outline'><FaGithub className='text-3xl'></FaGithub></button>
+                    <button  className='btn  btn-circle btn-outline'><FaGithub className='text-3xl'></FaGithub></button>
                     {/* <button  className='btn btn-primary btn-circle btn-outline'><FaFacebook/></button> */}
                 </div>
             
