@@ -19,7 +19,8 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
       children:[
         {
             path:'/',
-            element:<Home/>
+            element:<Home/>,
+            loader:()=> fetch('/propertyInfo.json')
         },
         {
           path:'/login',
@@ -32,7 +33,8 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
         {
           path:'/update',
           element:<PrivateRoutes><UpdateProfile/></PrivateRoutes>
-        }
+        },
+        
       ]
     },
   ]);
