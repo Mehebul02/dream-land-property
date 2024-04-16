@@ -1,55 +1,77 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { register } from "swiper/element";
 import { AuthContext } from "../../../provider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
-    const {user}=useContext(AuthContext)
+    const {updatePhoto,user}=useContext(AuthContext)
+    const [name,setName]=useState('')
+    const [image,setImage]=useState('')
+    const navigate = useNavigate()
+    const handleNameChange =e=>{
+      setName(e.target.value)
+    }
+    const handleImageChange =e=>{
+      setImage(e.target.value)
+    }
+    useEffect(()=>{
+      if(user){
+        setName(user.displayName || '')
+        setImage(user.photoURL || '')
+      }
+    },[user])
+    const handleSubmit=e =>{
+    
+      e.preventDefault()
+      updatePhoto(name,image)
+      .then(result =>{
+        console.log(result)
+        setImage()
+        navigate('/')
+      })
+      .catch(error =>{
+        console.log(error)
+      })
+    }
+
     return (
         <div className="card border p-4 card-compact max-w-4xl mx-auto bg-base-100 shadow-xl">
  <div className="avatar">
   <div className="w-24 mx-auto rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-    <img src={user?.photoURL ||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+    {
+      image && <img src={user.photoURL} />
+    }
   </div>
 </div>
-
-  <div className="card-body">
-  <div className="form-control">
-            <label className="label">
-              <span className="label-text font-poppins font-semibold">
-                Name
-              </span>
-            </label>
-            <input
-              type="text"
-              name="name"
-              defaultValue={user.displayName}
-              placeholder="Name"
-              className="input input-bordered"
-              {...register("name", { required: true })}
-            />
-             <div className="form-control">
-            <label className="label">
-              <span className="label-text font-poppins font-semibold">
-                Photo Url
-              </span>
-            </label>
-            <input
-              type="text"
-              name="image" 
-              defaultValue={user?.photoURL}
-              placeholder="Photo"
-              className="input input-bordered"
-              required
-              {...register("image", { required: true })}
-            />
-           
-          </div>
-          </div>
-   
-    <div className="card-actions justify-center my-4">
-      <button className="bg-primary px-4 py-2 rounded-lg text-xl text-white font-poppins font-semibold">Save Changes</button>
-    </div>
+<div>
+<form onSubmit={handleSubmit}>
+<label className="form-control  ">
+  <div className="label">
+    <span className="label-text text-xl font-poppins font-semibold">Name</span>
   </div>
+  <input type="text" placeholder="Name" value={name} name="name" className="input input-bordered " onChange={handleNameChange} />
+  
+</label>
+<label className="form-control  ">
+  <div className="label">
+    <span className="label-text text-xl font-poppins font-semibold">Email</span>
+  </div>
+  <input type="email" placeholder="Email" value={user?.email} name="email"  className="input input-bordered " />
+  
+</label>
+<label className="form-control  ">
+  <div className="label">
+    <span className="label-text text-xl font-poppins font-semibold">PhotoUrl</span>
+  </div>
+  <input type="text" value={image} placeholder="Name" name="image" className="input input-bordered " onChange={handleImageChange} />
+  
+</label>
+<div className="form-control mt-6">
+            <button className="bg-primary py-2 rounded-md text-xl text-white">Save Change</button>
+          </div>
+</form>
+</div>
+  
 </div>
     );
 };

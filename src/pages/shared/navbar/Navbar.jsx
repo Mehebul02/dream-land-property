@@ -79,11 +79,23 @@ const Navbar = () => {
             <li><a>Logout</a></li>
           </ul>
         </div> */}
-        {user ? <> <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img alt="Tailwind CSS Navbar component" src={user?.photoURL ||"https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
-            </div>
-          </div>
+        {user ? <> <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+          <img alt="Tailwind CSS Navbar component" src={user.photoURL } />
+        </div>
+      </div>
+      <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+        <li>
+          <a className="justify-between">
+           <h1>{user.displayName}</h1>
+           
+          </a>
+        </li>
+       
+      </ul>
+    </div>
+ 
           <button onClick={handleLogOut} className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Log Out</button>
         </>:<Link to='/login'><button className="bg-yellow-500 px-4 py-2 rounded-md text-black text-xl font-semibold font-poppins hover:bg-gray-300 ">Login</button></Link>}
       </div>
