@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../../provider/AuthProvider";
@@ -8,7 +8,10 @@ import toast, { Toaster } from "react-hot-toast";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState();
-  const { createUser, updateProfile } = useContext(AuthContext);
+  const navigate = useNavigate()
+  const location = useLocation()
+  const from = location?.state || '/'
+  const { createUser, updatePhoto } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -26,8 +29,9 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
-        updateProfile(name,image)
+        updatePhoto(name,image)
         .then(()=>{
+          navigate(from)
 
         })
         .catch(error =>console.log(error))

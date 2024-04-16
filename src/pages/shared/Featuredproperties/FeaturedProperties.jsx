@@ -28,7 +28,7 @@ const FeaturedProperties = ({propertyCard}) => {
           <div className="space-y-3">
             <h1 className="text-xl font-poppins border-b-2">Facilities</h1>
             {
-              facilities.map(li => <li className="font-poppins">{li}</li>)
+              facilities.map((li,idx) => <li key={idx}  className="font-poppins">{li}</li>)
             }
 
           </div>

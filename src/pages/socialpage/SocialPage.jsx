@@ -1,20 +1,23 @@
+import { useContext } from 'react';
 import { FaBeer, FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../provider/AuthProvider';
 const SocialPage = () => {
- 
-    // const handleGoogle =()=>{
-    //     googleUser()
-    //     .then(result =>{
-    //         console.log(result.user)
-    //     })
-    //     .catch(error =>console.log(error))
-    // }
+ const {googleLogin} = useContext(AuthContext)
+    const handleGoogle =()=>{
+        googleLogin()
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>console.log(error))
+    }
     return (
         <>
           
                 <div className='divider'>Continue With</div>
-                <div>
+                <div >
                     <button  className='btn  btn-circle btn-outline'><FaGithub className='text-3xl'></FaGithub></button>
-                    {/* <button  className='btn btn-primary btn-circle btn-outline'><FaFacebook/></button> */}
+                    <button onClick={()=>handleGoogle()} className='btn ml-2 btn-circle btn-outline'><FaGoogle className='text-3xl'></FaGoogle></button>
+                
                 </div>
             
         </>

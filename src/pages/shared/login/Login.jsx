@@ -96,7 +96,7 @@ const Login = () => {
             Register
           </Link>
         </p>
-        <div onClick={handleGitHubLogin} className="text-center">
+        <div  className="text-center">
           <SocialPage />
         </div>
       </div>
