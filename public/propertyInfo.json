@@ -1,7 +1,7 @@
 [
     {
       "id": "1",
-      "image": "https://i.ibb.co/M23fhxm/unsplash-Eh-Tc-C9s-YXsw.png",
+      "image": "https://i.ibb.co/R24yBK7/2.jpg",
       "estate_title": "Modern Apartment in Downtown",
       "segment_name": "Premium",
       "description": "A sleek and modern apartment located in the heart of the city, offering luxurious living with stunning city views.",
@@ -13,7 +13,7 @@
     },
     {
       "id": "2",
-      "image": "https://ibb.co/jR78p90",
+      "image": "https://i.ibb.co/416Qdx1/john-fornander-t-Vzy-DSV84w8-unsplash.jpg",
       "estate_title": "Cozy Suburban House",
       "segment_name": "Standard",
       "description": "A charming suburban house perfect for families, featuring a spacious backyard and comfortable living spaces.",
@@ -25,7 +25,7 @@
     },
     {
       "id": "3",
-      "image": "https://ibb.co/3f8hftw",
+      "image": "https://i.ibb.co/yNtccbX/vita-vilcina-Kt-Oid0-FLjq-U-unsplash.jpg",
       "estate_title": "Luxury Beachfront Villa",
       "segment_name": "Premium",
       "description": "An exquisite beachfront villa offering unparalleled luxury and breathtaking ocean views, perfect for a serene escape.",
@@ -37,7 +37,7 @@
     },
     {
       "id": "4",
-      "image": "https://ibb.co/ccXf4G0",
+      "image": "https://i.ibb.co/SPf5J1n/lotus-design-n-print-JF5-Iu-DNx-N6-M-unsplash.jpg",
       "estate_title": "City Loft with Industrial Charm",
       "segment_name": "Standard",
       "description": "A trendy city loft with exposed brick walls and industrial charm, located in a vibrant neighborhood.",
@@ -49,7 +49,7 @@
     },
     {
       "id": "5",
-      "image": "https://ibb.co/0YQvWCV",
+      "image": "https://i.ibb.co/j8nZxBj/brian-babb-Xbw-Hrt87m-Q0-unsplash.jpg",
       "estate_title": "Spacious Family Home with Pool",
       "segment_name": "Standard",
       "description": "A spacious family home with a private pool, perfect for entertaining and relaxing, nestled in a quiet neighborhood.",
@@ -61,8 +61,8 @@
     },
     {
       "id": "6",
-      "image": "https://ibb.co/tHZ2Sh3",
-      "estate_title": "Elegant Townhouse in Historic District",
+      "image": "https://i.ibb.co/phWLMR6/66d23897-ae09-4f39-a9c9-31c521495c49-l.jpg",
+      "estate_title": "Elegant Townhouse in Historic ",
       "segment_name": "Premium",
       "description": "An elegant townhouse located in a historic district, featuring classic architecture and modern amenities.",
       "price": "$1,200,000",

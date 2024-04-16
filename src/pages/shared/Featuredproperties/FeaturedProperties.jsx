@@ -10,9 +10,7 @@ const FeaturedProperties = ({propertyCard}) => {
   return (
     <div>
    
-      <div 
-   
-  className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
+      <div   data-aos="fade-up" className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
         <figure>
           <img src={image} alt="Shoes" />
         </figure>

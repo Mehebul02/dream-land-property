@@ -36,7 +36,7 @@ const UpdateProfile = () => {
             <input
               type="text"
               name="image" 
-              defaultValue={user.photoURL}
+              defaultValue={user?.photoURL}
               placeholder="Photo"
               className="input input-bordered"
               required

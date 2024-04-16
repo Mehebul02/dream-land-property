@@ -37,8 +37,8 @@ import PropertyDetails from "../pages/shared/Details/PropertyDetails";
         },
         {
           path:'/details/:id',
-          loader:({params})=>fetch(`/propertyInfo.json/${params.id}`),
-          element:<PropertyDetails/>,
+          loader:()=>fetch('/propertyInfo.json'),
+          element:<PrivateRoutes><PropertyDetails/></PrivateRoutes>,
         }
         
       ]
