@@ -10,9 +10,11 @@ const FeaturedProperties = ({propertyCard}) => {
   return (
     <div>
    
-      <div  className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
+      <div 
+   
+  className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
         <figure>
-          <img className="relative" src={image} alt="Shoes" />
+          <img src={image} alt="Shoes" />
         </figure>
         <div className=" absolute top-0 rounded-md px-6 py-1 bg-red-600 ">
           <h1 className="text-xl text-white font-poppins">{status}</h1>
