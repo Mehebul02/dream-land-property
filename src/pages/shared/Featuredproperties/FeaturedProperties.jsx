@@ -1,38 +1,41 @@
-import img from "../../../assets/slide2.jpg";
-import PropTypes from 'prop-types';
-const FeaturedProperties = () => {
-  //    const {estate_title,segment_name,description,price,facilities} = property
-  // console.log(property)
+import { Link } from "react-router-dom";
+
+<link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
+const FeaturedProperties = ({propertyCard}) => {
+     const {id,image,estate_title,segment_name,description,price,facilities,status} = propertyCard
+  // console.log(propertyCard)
 
  
 
   return (
     <div>
    
-      <div className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
+      <div  className="card card-compact border-2 border-gray-300 bg-base-100 shadow-xl">
         <figure>
-          <img className="relative" src={img} alt="Shoes" />
+          <img className="relative" src={image} alt="Shoes" />
         </figure>
         <div className=" absolute top-0 rounded-md px-6 py-1 bg-red-600 ">
-          <h1 className="text-xl text-white font-poppins">Sale</h1>
+          <h1 className="text-xl text-white font-poppins">{status}</h1>
         </div>
         <div className="card-body">
-          <h2 className="card-title font-poppins">Apartment</h2>
+          <h2 className="card-title font-poppins">{estate_title}</h2>
           <p className="font-poppins">
-            If a dog chews shoes whose shoes does he choose?
+           {description}
           </p>
-          <h1 className="text-2xl font-semibold font-poppins">$1500/month</h1>
+          <h1 className="text-2xl font-semibold font-poppins">{price}/month</h1>
           <div className="space-y-3">
             <h1 className="text-xl font-poppins border-b-2">Facilities</h1>
+            {
+              facilities.map(li => <li className="font-poppins">{li}</li>)
+            }
 
-            <li className="font-poppins">living room</li>
-            <li className="font-poppins">swimming pool</li>
-            <li className="font-poppins">Kitchen</li>
           </div>
           <div className="card-actions justify-center mt-4">
-            <button className="bg-[#0284C7] px-4 py-2 rounded-lg text-xl text-white font-poppins font-semibold">
+           <Link to={`/details/${id}`}>
+           <button className="bg-[#0284C7] px-4 py-2  rounded-lg text-xl text-white font-poppins font-semibold">
               View Property
             </button>
+           </Link>
           </div>
         </div>
       </div>
@@ -41,6 +44,6 @@ const FeaturedProperties = () => {
 };
 
 export default FeaturedProperties;
-FeaturedProperties.PropTypes={
-    properties:PropTypes.node
-}
+// FeaturedProperties.PropTypes={
+//     properties:PropTypes.node
+// }

@@ -5,7 +5,7 @@ import FeaturedProperties from "../shared/Featuredproperties/FeaturedProperties"
 
 const Home = () => {
     const properties = useLoaderData()
-    // console.log(properties)
+
    
     return (
         <div>
@@ -15,12 +15,12 @@ const Home = () => {
     <p className='font-poppins'>Certainly! Could you please specify the type of feature properties you're referring to? <br /> Are you talking about software features, real estate features, or something else?</p>
     <div className="divider"></div>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+    <div   className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
         {
-           properties.map(card => <FeaturedProperties key={card.if} card={card}></FeaturedProperties>)
+           properties.map(propertyCard => <FeaturedProperties key={propertyCard.id} propertyCard={propertyCard}></FeaturedProperties>)
         }
 
-    </div>
+    </div> 
         </div>
     );
 };

@@ -10,6 +10,7 @@ import ErrorPage from "../pages/error/ErrorPage";
 
 import UpdateProfile from "../pages/shared/updateprofile/UpdateProfile";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
+import PropertyDetails from "../pages/shared/Details/PropertyDetails";
 
   const router = createBrowserRouter([
     {
@@ -20,7 +21,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
         {
             path:'/',
             element:<Home/>,
-            loader:()=> fetch('/propertyInfo.json')
+            loader:()=> fetch('/propertyInfo.json'),
         },
         {
           path:'/login',
@@ -34,6 +35,11 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
           path:'/update',
           element:<PrivateRoutes><UpdateProfile/></PrivateRoutes>
         },
+        {
+          path:'/details/:id',
+          loader:({params})=>fetch(`/propertyInfo.json/${params.id}`),
+          element:<PropertyDetails/>,
+        }
         
       ]
     },
