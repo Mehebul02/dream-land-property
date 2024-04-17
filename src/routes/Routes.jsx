@@ -12,6 +12,7 @@ import UpdateProfile from "../pages/shared/updateprofile/UpdateProfile";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import PropertyDetails from "../pages/shared/Details/PropertyDetails";
 import Contact from "../pages/shared/contact/Contact";
+import Clients from "../pages/shared/feedback/Clients";
 
   const router = createBrowserRouter([
     {
@@ -45,6 +46,11 @@ import Contact from "../pages/shared/contact/Contact";
           path:'/contact',
           element:<Contact/>
         },
+        {
+          path:'/client',
+          element:<Clients></Clients>,
+          loader:()=> fetch ('client.json'),
+        }
         
       ]
     },

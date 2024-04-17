@@ -1,0 +1,22 @@
+[
+    {
+      "image": "https://example.com/client1_image.jpg",
+      "name": "Alice Johnson",
+      "co_founder": "Michael Smith",
+      "feedback": "My experience with Acme Realty was fantastic! They guided me through every step of the home buying process and made it stress-free. I'm extremely happy with my new home and highly recommend their services."
+    },
+    {
+      "image": "https://example.com/client2_image.jpg",
+      "name": "David Rodriguez",
+      "co_founder": "Emma Johnson",
+      "feedback": "I can't thank Acme Realty enough for their exceptional service. They listened to my needs and found me the perfect apartment in no time. Their attention to detail and professionalism are unmatched!"
+    },
+    {
+      "image": "https://example.com/client3_image.jpg",
+      "name": "Sarah Lee",
+      "co_founder": "John Davis",
+      "feedback": "Acme Realty exceeded my expectations! They went above and beyond to help me sell my property quickly and at a great price. Their team is reliable, responsive, and truly cares about their clients."
+    }
+    
+  ]
+     

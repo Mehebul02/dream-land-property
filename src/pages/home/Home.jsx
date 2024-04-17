@@ -5,6 +5,7 @@ import FeaturedProperties from "../shared/Featuredproperties/FeaturedProperties"
 import clientBanner from '../../assets/slide2.jpg'
 import Contact from "../shared/contact/Contact";
 import { Helmet } from "react-helmet-async";
+import Clients from "../shared/feedback/Clients";
 const Home = () => {
     const properties = useLoaderData()
 
@@ -32,7 +33,7 @@ const Home = () => {
     <p className='font-poppins'>Real Estate agents are Property consisting of land and the buildings on it, along with its <br />seds naturals resources such seds as crops, minerals, or water</p>
     <div className="divider"></div>
     <div className="hero h-[490px]   mt-12 rounded-xl bg-cover bg-center">
-    
+   <Clients/>
     </div>
     </div>
     <Contact/>
