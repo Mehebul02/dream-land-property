@@ -4,7 +4,7 @@ import { AuthContext } from "../../../provider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
-    const {updatePhoto,user}=useContext(AuthContext)
+    const {updatePhoto,user,setUser}=useContext(AuthContext)
     const [name,setName]=useState('')
     const [image,setImage]=useState('')
     const navigate = useNavigate()
@@ -27,6 +27,7 @@ const UpdateProfile = () => {
       .then(result =>{
         console.log(result)
         setImage()
+        
         navigate('/')
       })
       .catch(error =>{

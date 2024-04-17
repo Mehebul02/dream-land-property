@@ -34,17 +34,7 @@ const Login = () => {
 
     console.log("login", data);
   };
-  const handleGitHubLogin =()=>{
-    gitHubLogin()
-    .then(result =>{
-      navigate(from)
-      console.log(result.user)
-    })
-    .catch(error =>{
-      console.log(error)
-    })
-  }
-  
+ 
   return (
     <div>
       <div className="p-4 bg-gray-300 max-w-4xl mx-auto rounded-md shadow-lg">

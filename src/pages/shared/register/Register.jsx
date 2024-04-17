@@ -32,6 +32,7 @@ const Register = () => {
         updatePhoto(name,image)
         .then(()=>{
           navigate(from)
+         
 
         })
         .catch(error =>console.log(error))

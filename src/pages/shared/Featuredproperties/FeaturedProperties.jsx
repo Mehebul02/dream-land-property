@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 <link rel="stylesheet" href="bower_components/aos/dist/aos.css" />
 const FeaturedProperties = ({propertyCard}) => {
      const {id,image,estate_title,segment_name,description,price,facilities,status} = propertyCard
-  // console.log(propertyCard)
+
 
  
 
