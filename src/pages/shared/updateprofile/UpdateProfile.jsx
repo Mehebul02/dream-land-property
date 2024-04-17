@@ -1,13 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { register } from "swiper/element";
 import { AuthContext } from "../../../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const UpdateProfile = () => {
     const {updatePhoto,user,setUser}=useContext(AuthContext)
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location.pathname)
+    const from = location?.state ? location.state : "/";
     const [name,setName]=useState('')
     const [image,setImage]=useState('')
-    const navigate = useNavigate()
+   
     const handleNameChange =e=>{
       setName(e.target.value)
     }
@@ -21,14 +25,13 @@ const UpdateProfile = () => {
       }
     },[user])
     const handleSubmit=e =>{
-    
-      e.preventDefault()
+      navigate(from)
+      // e.preventDefault()
       updatePhoto(name,image)
       .then(result =>{
         console.log(result)
         setImage()
-        
-        navigate('/')
+       
       })
       .catch(error =>{
         console.log(error)

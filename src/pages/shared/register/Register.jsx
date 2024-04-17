@@ -7,15 +7,15 @@ import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState();
+
   const navigate = useNavigate()
-  const location = useLocation()
-  const from = location?.state || '/'
+  // const location = useLocation()
+  // const from = location?.state || '/'
   const { createUser, updatePhoto } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
-    watch,
+
     formState: { errors },
   } = useForm();
 
@@ -31,7 +31,7 @@ const Register = () => {
       .then((result) => {
         updatePhoto(name,image)
         .then(()=>{
-          navigate(from)
+          navigate('/login')
          
 
         })

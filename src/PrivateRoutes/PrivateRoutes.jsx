@@ -7,17 +7,10 @@ const PrivateRoutes = ({children}) => {
     const {user,loading} = useContext(AuthContext)
     const location = useLocation()
     console.log(location.pathname)
-    // if(loading){
-    //     return <div className="flex justify-center items-center h-screen text-3xl"><ScaleLoader
-    //     color="#36d7b7"
-    //     height={100}
-    //     width={20}
-    //   /> </div>
-    //   }
     if(user){
        return children
     }
-    return  <Navigate to='/login' state={location?.pathname || '/'}></Navigate>
+    return  <Navigate  to='/login' state={location?.pathname || '/'}></Navigate>
        
     
 };

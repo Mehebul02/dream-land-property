@@ -1,31 +1,29 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
 import { useForm } from "react-hook-form";
 import SocialPage from "../../socialpage/SocialPage";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { RingLoader } from "react-spinners";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
-  const { loginUser,gitHubLogin,loading } = useContext(AuthContext);
-  const navigate =useNavigate()
-  const location = useLocation()
-  const from =location?.state || '/'
+  const { loginUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
     const { email, password } = data;
     loginUser(email, password)
       .then((result) => {
-        navigate(from)
         console.log(result.user);
+        // navigate(location?.state ? location.state :'/');
+        navigate(from)
       })
       .catch((error) => {
         console.log(error);
@@ -34,7 +32,7 @@ const Login = () => {
 
     console.log("login", data);
   };
- 
+
   return (
     <div>
       <div className="p-4 bg-gray-300 max-w-4xl mx-auto rounded-md shadow-lg">
@@ -45,7 +43,9 @@ const Login = () => {
         >
           <div className="form-control">
             <label className="label">
-              <span className="label-text font-poppins font-semibold">Email</span>
+              <span className="label-text font-poppins font-semibold">
+                Email
+              </span>
             </label>
             <input
               type="email"
@@ -76,7 +76,9 @@ const Login = () => {
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="bg-primary py-2 rounded-md text-xl text-white">Login</button>
+            <button className="bg-primary py-2 rounded-md text-xl text-white">
+              Login
+            </button>
           </div>
           <Toaster position="top-right" reverseOrder={false} />
         </form>
@@ -86,7 +88,7 @@ const Login = () => {
             Register
           </Link>
         </p>
-        <div  className="text-center">
+        <div className="text-center">
           <SocialPage />
         </div>
       </div>
