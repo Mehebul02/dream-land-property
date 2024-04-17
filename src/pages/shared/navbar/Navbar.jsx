@@ -24,14 +24,7 @@ const Navbar = () => {
         <li className="text-xl font-poppins text-white ">Home</li>
       </NavLink>
 
-      <NavLink
-        to="about"
-        className={({ isActive }) =>
-          isActive ? "border-b-2 border-red-600" : ""
-        }
-      >
-        <li className="text-xl font-poppins text-white ">About Us</li>
-      </NavLink>
+
 
       <NavLink
         to="/update"

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { FaBeer, FaFacebook, FaGithub, FaGoogle } from 'react-icons/fa';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Navigate } from 'react-router-dom';
 const SocialPage = () => {
