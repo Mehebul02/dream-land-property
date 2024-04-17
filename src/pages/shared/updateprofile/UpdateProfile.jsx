@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { register } from "swiper/element";
 import { AuthContext } from "../../../provider/AuthProvider";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const UpdateProfile = () => {
     const {updatePhoto,user,setUser}=useContext(AuthContext)
@@ -39,7 +40,12 @@ const UpdateProfile = () => {
     }
 
     return (
-        <div className="card border p-4 card-compact max-w-4xl mx-auto bg-base-100 shadow-xl">
+      
+  <div>
+    <Helmet>
+      <title>Update Profile-Dream Land</title>
+    </Helmet>
+          <div className="card border p-4 card-compact max-w-4xl mx-auto bg-base-100 shadow-xl">
  <div className="avatar">
   <div className="w-24 mx-auto rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
     {
@@ -77,6 +83,7 @@ const UpdateProfile = () => {
 </div>
   
 </div>
+  </div>
     );
 };
 

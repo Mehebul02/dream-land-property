@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -35,6 +36,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Login-Dream Land</title>
+      </Helmet>
       <div className="p-4 bg-gray-300 max-w-4xl mx-auto rounded-md shadow-lg">
         <h1 className="text-3xl text-center my-10">Please Login Now !</h1>
         <form

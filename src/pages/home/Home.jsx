@@ -4,12 +4,16 @@ import Banner from "../shared/banner/Banner";
 import FeaturedProperties from "../shared/Featuredproperties/FeaturedProperties";
 import clientBanner from '../../assets/slide2.jpg'
 import Contact from "../shared/contact/Contact";
+import { Helmet } from "react-helmet-async";
 const Home = () => {
     const properties = useLoaderData()
 
    
     return (
         <div>
+            <Helmet>
+                <title>Home-Dream Land</title>
+            </Helmet>
          <Banner/>
          <div className='text-center my-14 space-y-3'>
     <h1 className='text-3xl text-center font-poppins font-semibold '>Feature Properties</h1>

@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../../provider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,7 +50,9 @@ const Register = () => {
   };
 
   return (
-    <div className=" p-4">
+    <div>
+      <Helmet><title>Register-Dream Land</title></Helmet>
+      <div className=" p-4">
       <div className="p-4 bg-gray-300 max-w-4xl mx-auto rounded-md shadow-lg">
         <h1 className="text-3xl text-center my-5 font-poppins font-semibold ">
           Please Register
@@ -140,6 +143,7 @@ const Register = () => {
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };

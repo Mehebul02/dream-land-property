@@ -1,10 +1,15 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import { FaLocationArrow, FaPhone,  } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 
 const Contact = () => {
   return (
-    <div className="flex  justify-evenly flex-col lg:flex-row p-4">
+   <div>
+    <Helmet>
+      {/* <title>Contact-Dream Land</title> */}
+    </Helmet>
+     <div className="flex  justify-evenly flex-col lg:flex-row p-4">
       <div  data-aos="fade-right"  data-aos-offset="200"  className="border p-4 rounded-md shadow-lg">
         <h1 className="text-3xl font-poppins font-semibold">
           IT’S EASY TO FIND US
@@ -57,6 +62,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+   </div>
   );
 };
 
