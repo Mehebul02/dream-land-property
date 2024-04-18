@@ -27,8 +27,9 @@ const Login = () => {
         navigate(from)
       })
       .catch((error) => {
+        toast.error("Incorrect Password !")
         console.log(error);
-        toast.error("Password should be at least 6 characters!");
+        
       });
 
     console.log("login", data);
