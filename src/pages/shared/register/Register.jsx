@@ -12,7 +12,7 @@ const Register = () => {
   const navigate = useNavigate()
   // const location = useLocation()
   // const from = location?.state || '/'
-  const { createUser, updatePhoto } = useContext(AuthContext);
+  const { createUser, updatePhoto,logOut } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -30,10 +30,11 @@ const Register = () => {
     }
     createUser(email, password)
       .then((result) => {
+        
         updatePhoto(name,image)
         .then(()=>{
           navigate('/login')
-         
+         logOut()
 
         })
         .catch(error =>console.log(error))
